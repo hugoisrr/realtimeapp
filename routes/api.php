@@ -9,16 +9,17 @@ Route::apiResource('/question/{question}/reply', 'ReplyController');
 Route::post('/likes/{reply}', 'LikesController@likeIt');
 Route::delete('/likes/{reply}', 'LikesController@unLikeIt');
 
-// Route::group([
+Route::group([
 
-//     'middleware' => 'api',
-//     'prefix' => 'auth'
+    'middleware' => 'api',
+    'prefix' => 'auth'
 
-// ], function ($router) {
+], function ($router) {
 
-//     Route::post('login', 'AuthController@login');
-//     Route::post('logout', 'AuthController@logout');
-//     Route::post('refresh', 'AuthController@refresh');
-//     Route::post('me', 'AuthController@me');
+    Route::post('login', 'AuthController@login');
+    Route::post('signup', 'AuthController@signup');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
 
-// });
+});
